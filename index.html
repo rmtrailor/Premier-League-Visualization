@@ -1,0 +1,237 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Final Project</title>
+
+        <!-- Style sheet -->
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+        <!-- Font Link -->
+        <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <header>
+            <div class="banner">
+                <p id="name">Final Project Visualizations</p>
+                <a href="../" id="back">Back</a>
+            </div>
+        </header>
+
+        <div class="opening">
+            <h1>Visual Evaluation</h1>
+        </div>
+
+
+        <main>
+            <article>
+                <h2>Author: Rubin Trailor</h2>
+            </article>
+            <hr />
+            <article>
+                <h1>The Dataset</h1>
+                <p>
+                    The Premier League is an English Football League, and is
+                    the primary football league in the UK. This Dataset details the data from the
+                    2015 - 2016 season for the Premier League. Each row in this dataset is a match
+                    played between two teams, and each column in the dataset is some form of information
+                    or statistic for that match such as the home/away team, home/away goals, home/away
+                    shots on target, assits, etc.
+                </p>
+
+            </article>
+
+            <article>
+                <h1>Motivation</h1>
+                <p>
+                    My main motivation for doing this dataset is because I’m a fan of soccer and I like watching
+                    the Premier League (my favorite club/team is Manchester City). I want to analyze the data
+                    because I want to see how certain clubs performed against other clubs during the season. I also
+                    want to make some in-depth shot-type analysis. Data is a very important aspect of sports
+                    especially when it involves the performance of the team or its players, so I feel this dataset
+                    will help me with creating visuals that can be analyzed for performance breakdowns and game
+                    reviews.
+                </p>
+            </article>
+            <hr />
+            <h1>The Visualizations</h1>
+
+            <!-- Visualizations -->
+            <section>
+                <h2>How Well Do the Teams Perform Against Each Other?</h2>
+                <img src="images/badge_tiles.jpg" alt="Premier League Badges" width="100%"/>
+                <svg id="heatmap"></svg>
+                <svg id="heatmap-details"></svg>
+                <p>
+                    <b>Description: </b> <br />
+                    This Heatmap depicts the performance of teams against other teams in the league.
+                    The colors of the cells coordinate with the performance of the team on the y-axis
+                    against the team on the x-axis. Green values mean that the team performs better
+                    than the opposing team. Where as a red value means that the team doesn't perform better than
+                    the other team. White values mean that the performance values equaled out.
+                </p>
+                <p>
+                    The performance is evaluated in terms of goals scored against the other team.
+                    For this implementation, each team has their own scorecard detailing a score value
+                    against the other teams. If Team A wins against Team B, then a <i>score</i> value
+                    is calculated based on the Team A Goals &ndash; Team B Goals. This value is added for Team A's
+                    score against Team B's and is deducted for Team B's score against Team A. This would be
+                    reversed if Team B was the victor. In the event of a tie, no team recieves any points.
+                </p>
+                <p>
+                    <b>Findings:</b> <br />
+                    Arsenal performed pretty well against most teams, with their main enemies being
+                    Southampton and Chelsea. Leicester also performed fairly well against most of the
+                    teams, although sometimes they were barely better with a value of 1. Teams like Newcastle
+                    and Sunderland performed poorly against a lot of the other teams.
+                </p>
+                <hr />
+
+                <h2>Who's the Most Accurate Team?</h2>
+                <img src="images/shot.jpg" alt="Premier League Shot" width="100%"/>
+                <svg id="bar-chart"></svg>
+                <p>Some definitions for this visualization: </p>
+                <p><b>Shots On Target:</b> Shots that would or does enter the goal post.</p>
+                <p><b>Shots Off Target:</b> Shots that would not or does not enter the goal post.</p>
+                <p>
+                    <b>Description: </b> <br />
+                    Now for this visualization we are depicting the accuracy as a percentage of the total
+                    shots each team attempted during the season. Hovering over each bar gives the number
+                    of shots each bar represents as well as the percentage that amount makes up compared
+                    to the total number of shots.
+                </p>
+                <p>
+                    <b>Findings:</b> <br />
+                    The average accuracy for on target shots across all the teams was 45.25%. The most
+                    accurate team was Tottenham Hotspur F.C. (Spurs) with an accuracy of 56%. However,
+                    if you look at the number of shots they had off target, you can see that the total
+                    is more than any other team had on target. The least accurate team was Norwich
+                    City F.C. (Norwich) with an accuracy of 40%.
+                </p>
+                <hr />
+
+                <h2>When Does Each Team Score More Goals?</h2>
+                <img src="images/goal.jpg" alt="Premier League Goal" width="100%"/>
+                <svg id="parallel"></svg>
+                <p>
+                    <b>Description: </b> <br />
+                    This visualization shows when each team scored their goals during the season.
+                    Each y-axis depicts a time section of a match. "0-15" would be the first 15 minutes
+                    of the match, "15-30" would be the next 15 minutes, and so on. The first half of a
+                    match is the first 45 minutes, and the second half of the match is the second 45
+                    minutes (45 - 90). For each half, if the referee decides that more time needs to be
+                    added to the clock then there are extra minutes. That's what the y-axis "45+extra"
+                    and "90+extra" represent.
+                </p>
+                <p>
+                    Each line is a different team. If you hover a line a tooltip will pop up that will
+                    tell you what team you are currently on. If you click the line, this will brush
+                    the lines so that the line you clicked will only have the colors and the other lines
+                    will transition to a barely visible gray. This helps analyze a single team's score
+                    history.
+                </p>
+                <p>
+                    <b>Findings:</b> <br />
+                    It's actually common for teams (ex. Manchester City) to score more towards the
+                    beginning of each half.
+                </p>
+                <hr />
+
+                <h2>What Team Has the Better Defense?</h2>
+                <img src="images/goalkeepers.png" alt="Premier League Goalkeepers" width="100%"/>
+                <svg id="bubble-plot"></svg>
+                <p>Some definitions for this visualization:</p>
+                <p>
+                    <b>Blocks:</b> When player stops an opposing player from getting the ball.
+                </p>
+                <p>
+                    <b>Clearances:</b> Whenever a player hits or kicks the ball away from the goal
+                    of his or her own team.
+                </p>
+                <p>
+                    <b>Opponent Shots:</b> The opposing teams shots on target against the team.
+                </p>
+                <p>
+                    <b>Saves:</b> Whenever the Goalkeeper stops, catches, or punches a ball that would
+                    have entered the goal and scored for the opposing team.
+                </p>
+                <p>
+                    <b>Description: </b> <br />
+                    For this visualization we are analyzing the different defensive stats of each team.
+                    The size of each circle correlates to the number of shots the opposing teams were
+                    able to get on target. The fill correlates to the number of blocks that team did.
+                    If you hover over each circle, a tooltip will pop up which will give you the data
+                    for each bubble.
+                </p>
+                <p>
+                    <b>Findings:</b> <br />
+                    Sunderland had a lot of defensive plays going on in the season. However, they also
+                    had the most opponent shots on them, which may be a correlation. Norwich had the
+                    most clearances which seemed to have had an impact because they don't have too many
+                    opposing shots on them, and therefore, also less saves from the goalkeeper.
+                </p>
+
+            </section>
+
+            <article>
+                <h1>Links</h1>
+                <p>Link to the dataset <a href="https://github.com/jargnar/premier-league-data/tree/master/2015-16">here</a>.</p>
+                <p>Premier League <a href="http://www.premierleague.com/en-gb.html">website</a>.</p>
+                <p>Premier League Logo Image found <a href="https://www.vigiglobe.com/wp-content/uploads/2016/01/image_barclays_premier_league.jpg">here</a>.</p>
+                <p>Team Badge Tiles from <a href="http://jbernardino.deviantart.com/art/Premier-League-Wallpaper-556008475">here</a>.</p>
+                <p>Image for the player shooting the ball found <a href="http://northlondonisred.co.uk/arsenal-will-kill-off-liverpools-top-4-aspirations/">here</a>.</p>
+                <p>Image for "When Does Each Team Score More Goals?" found <a href="http://www.cnet.com/uk/news/o2-4g-kicks-off-free-premier-league-goals-from-the-sun/">here</a>.</p>
+                <p>Image of the goalkeepers taken from <a href="http://www.101greatgoals.com/blog/a-statistical-breakdown-of-the-best-goalkeepers-in-the-premier-league/">here</a>.</p>
+                <p>
+                    All the badge links:
+                    <a href="https://en.wikipedia.org/wiki/Arsenal_F.C.#/media/File:Arsenal_FC.svg">Arsenal</a>,
+                    <a href="https://upload.wikimedia.org/wikipedia/en/thumb/1/15/Aston_Villa.svg/732px-Aston_Villa.svg.png">Aston Villa</a>,
+                    <a href="https://en.wikipedia.org/wiki/A.F.C._Bournemouth#/media/File:AFC_Bournemouth_(2013).svg">Bournemouth</a>,
+                    <a href="https://en.wikipedia.org/wiki/Chelsea_F.C.#/media/File:Chelsea_FC.svg">Chelsea</a>,
+                    <a href="https://en.wikipedia.org/wiki/Crystal_Palace_F.C.#/media/File:Crystal_Palace_FC_logo.svg">Crystal Palace</a>,
+                    <a href="https://en.wikipedia.org/wiki/Everton_F.C.#/media/File:Everton_FC_logo.svg">Everton</a>,
+                    <a href="https://en.wikipedia.org/wiki/Leicester_City_F.C.#/media/File:Leicester_City_crest.svg">Leicester</a>,
+                    <a href="https://en.wikipedia.org/wiki/Liverpool_F.C.#/media/File:Liverpool_FC.svg">Liverpool</a>,
+                    <a href="https://en.wikipedia.org/wiki/Manchester_City_F.C.#/media/File:Logo-Manchester-City_89251187_358284_1706x1706.jpg">Manchester City (New Badge)</a>,
+                    <a href="https://en.wikipedia.org/wiki/Manchester_United_F.C.#/media/File:Manchester_United_FC_crest.svg">Manchester United</a>,
+                    <a href="https://en.wikipedia.org/wiki/Newcastle_United_F.C.#/media/File:Newcastle_United_Logo.svg">Newcastle</a>,
+                    <a href="https://en.wikipedia.org/wiki/Norwich_City_F.C.#/media/File:Norwich_City.svg">Norwich</a>,
+                    <a href="https://en.wikipedia.org/wiki/Southampton_F.C.#/media/File:FC_Southampton.svg">Southampton</a>,
+                    <a href="https://en.wikipedia.org/wiki/Tottenham_Hotspur_F.C.#/media/File:Tottenham_Hotspur.svg">Spurs</a>,
+                    <a href="https://en.wikipedia.org/wiki/Stoke_City_F.C.#/media/File:Stoke_City_FC.svg">Stoke</a>,
+                    <a href="https://en.wikipedia.org/wiki/Sunderland_A.F.C.#/media/File:Logo_Sunderland.svg">Sunderland</a>,
+                    <a href="https://en.wikipedia.org/wiki/Swansea_City_A.F.C.#/media/File:Swansea-City-Logo.png">Swansea</a>,
+                    <a href="https://en.wikipedia.org/wiki/Watford_F.C.#/media/File:Watford.svg">Watford</a>,
+                    <a href="https://en.wikipedia.org/wiki/West_Bromwich_Albion_F.C.#/media/File:West_Bromwich_Albion.svg">West Brom</a>,
+                    <a href="https://en.wikipedia.org/wiki/West_Ham_United_F.C.#/media/File:West_Ham_United_FC.svg">West Ham</a>.
+                </p>
+            </article>
+
+            <article>
+                <h1>License for Dataset</h1>
+                <p>
+                    Copyright (c) 2016 Suhas SG Permission is hereby granted, free of charge, to any person
+                    obtaining a copy of this data and associated files for ONLY private or personal use,
+                    provided you credit the FAPL as its source and add the Website address: www.premierleague.com.
+                    The above copyright notice and this permission notice shall be included in all copies or
+                    substantial portions of the data or any related analysis. THE DATA IS PROVIDED "AS IS",
+                    WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+                    WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+                    NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+                    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+                    IN CONNECTION WITH THE DATA OR THE USE OR OTHER DEALINGS IN THE DATA.
+                </p>
+            </article>
+
+        </main>
+
+        <footer>
+            <div class="footer">
+                <p>&copy; 2015 Rubin Trailor. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <!-- Scripts -->
+        <script src="https://d3js.org/d3.v3.min.js"></script>
+        <script src="js/visualizations.js"></script>
+    </body>
+</html>

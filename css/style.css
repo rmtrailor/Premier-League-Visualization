@@ -1,0 +1,224 @@
+
+/**************
+ * Page style *
+ **************/
+body {
+    font-family: 'Slabo 27px', serif;
+    margin: 0%;
+    /*font-size: 110%;*/
+}
+
+p {
+    line-height: 150%;
+}
+
+b {
+    font-weight: 900;
+}
+
+/****************
+ * Banner Style *
+ ****************/
+.banner {
+    /*background-color: #4682B4;*/
+    background-color: #000000;
+    /*border: 2px solid #4682B4;*/
+    color: #FFFFFF;
+    overflow: auto;
+    margin-bottom: 0%;
+}
+
+.banner #name {
+    padding-left: 15px;
+    float: left;
+}
+
+.banner #back {
+    padding-right: 15px;
+    padding-top: 15px;
+    float: right;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.banner #back:hover {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/*****************
+ * Opening Style *
+ *****************/
+.opening {
+    margin 0%;
+    text-align: left;
+    background-image: url("../images/bpl_bkgd_scaled.jpg");
+    background-size: auto;
+    background-position: center;
+    /* height: 674px; */
+    /*width: 1380px;*/
+    /* width: 1280px; */
+}
+
+.opening h1 {
+    padding-top: 610px;
+    text-align: center;
+    margin: 0px;
+    color: #FFFFFF;
+}
+
+/**************
+ * Main Style *
+ **************/
+main {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+main h1 {
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+img {
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+h2, h3 {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #4682B4;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+article {
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+svg {
+    /*border: 2px solid #4682B4;*/
+    text-align: center;
+}
+
+/***********************
+ * Visualization Style *
+ ***********************/
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000000;
+    stroke-width: 1px;
+}
+
+.bc.x.axis path,
+.bc.x.axis line,
+.bc.y.axis path,
+.bc.y.axis line {
+    fill: none;
+    stroke: #333333;
+    stroke-width: 1px;
+}
+
+.cell {
+    stroke: #333333;
+}
+
+.axis text,
+#x-label,
+#y-label  {
+    fill: #000000;
+}
+
+.heatmap {
+    fill: #000000;
+}
+
+#legend line,
+#legend path {
+    stroke: #000000;
+    fill: none;
+}
+
+#legend text {
+    font-size: 16px;
+    fill: #000000;
+}
+
+#legend-rect {
+    stroke: #000000;
+}
+
+#tooltip {
+    font-size: 16px;
+    stroke: #000000;
+}
+
+.line {
+    fill: none;
+    stroke: black;
+    stroke-width: 2.5px;
+}
+
+.legend circle  {
+  stroke: dimgrey;
+  fill: none;
+}
+
+.tooltip-pc {
+    position: absolute;
+    text-align: center;
+    width: 100px;
+    height: 20px;
+    padding: 1px;
+    background: #EEEEEE;
+    border: 0.5px solid #000000;
+    z-index: 10;
+}
+
+.tooltip-bp {
+    position: absolute;
+    text-align: center;
+    width: 120px;
+    height: 120px;
+    padding: 1px;
+    background: #EEEEEE;
+    border: 0.5px solid #000000;
+    z-index: 10;
+}
+
+.tooltip-bc {
+    font-size: 14px;
+    z-index: 10;
+}
+
+.coordLines path {
+    fill: none;
+    stroke-width: 1.75px;
+}
+
+/****************
+ * Footer Style *
+ ****************/
+.footer {
+    /*background-color: #4682B4;*/
+    background-color: #000000;
+    /*border: 2px solid #4682B4;*/
+    color: #FFFFFF;
+    overflow: auto;
+}
+
+.footer p {
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    float: left;
+}
